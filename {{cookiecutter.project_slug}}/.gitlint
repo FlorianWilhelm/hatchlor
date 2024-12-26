@@ -1,0 +1,33 @@
+[general]
+regex-style-search=true
+# Ignore rules, reference them by id or name (comma-separated)
+ignore=title-trailing-punctuation, T3
+
+# Enable specific community contributed rules
+contrib=contrib-title-conventional-commits, CT1
+
+# Set the extra-path where gitlint will search for user defined rules
+# extra-path=
+
+### Configuring rules ###
+
+[title-max-length]
+line-length=80
+
+[title-min-length]
+min-length=5
+
+[body-max-line-length]
+line-length=210
+
+### Ignore rules to ignore automated commits by bump-my-version or semantic-release ###
+
+[ignore-by-title]
+# Match commit titles starting with "Release"
+regex=^(Bump version: )*[0-9]+\.[0-9]+(?:\.[0-9]+)?(?:\.)?
+ignore=all
+
+[ignore-by-author-name]
+# Match commits by author name (e.g. ignore dependabot commits)
+regex=semantic-release
+ignore=all

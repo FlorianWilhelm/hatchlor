@@ -11,6 +11,7 @@
   "project_repo": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "lock_file_support": false,
+  "gitlint_commitmsg_linter": true,
   "__prompts__": {
     "full_name": "Provide your [bold yellow]full name[/]",
     "email": "Provide your [bold yellow]email[/]",
@@ -23,6 +24,7 @@
     "open_source_license": "Provide the [bold yellow]license[/] of this project",
     "pypi_username": "Optionally, provide a [bold yellow]PyPI user name[/]",
     "github_username": "Optionally, provide a [bold yellow]Github user name[/]",
-    "lock_file_support": "Activate support for lock files?"
+    "lock_file_support": "Activate support for lock files?",
+    "gitlint_commitmsg_linter": "Include gitlint commit message linter?"
   }
 }

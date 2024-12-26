@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 permissions:
   actions: read
@@ -13,13 +12,22 @@ permissions:
   pull-requests: write
 
 jobs:
+
+  dump-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump context "GitHub"
+        env:
+          GITHUB_CONTEXT: {% raw %}${{ toJson(github) }}{% endraw %}
+        run: echo "$GITHUB_CONTEXT"
+
   labeler:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
-
       - name: Run Labeler
         uses: crazy-max/ghaction-github-labeler@v5.0.0
         with:
           skip-delete: true
+          github-token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}

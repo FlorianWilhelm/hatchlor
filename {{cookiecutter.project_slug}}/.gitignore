@@ -101,6 +101,9 @@ ENV/
 # mypy
 .mypy_cache/
 
+# ruff
+.ruff_cache/
+
 # IDE settings
 .vscode/
 .idea/

@@ -52,9 +52,12 @@ theme:
   features:
     - navigation.sections
     - navigation.tabs
-#    - navigation.expand
+    - navigation.expand
     - navigation.tabs.sticky
     - navigation.instant
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
 
 watch:
 - src/{{ cookiecutter.pkg_name }}
@@ -124,6 +127,9 @@ markdown_extensions:
       guess_lang: false
       linenums_style: pymdownx-inline
       use_pygments: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite:
   - pymdownx.keys:
   - pymdownx.magiclink:

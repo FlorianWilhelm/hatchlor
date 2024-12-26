@@ -6,13 +6,23 @@ on:
       - main
 
 jobs:
+
+  dump-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump context "GitHub"
+        env:
+          GITHUB_CONTEXT: {% raw %}${{ toJson(github) }}{% endraw %}
+        run: echo "$GITHUB_CONTEXT"
+
   update-draft:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "main"
-      - uses: release-drafter/release-drafter@v6
+      - name: Release draft action
+        uses: release-drafter/release-drafter@v6
         with:
           disable-autolabeler: true
         env:

@@ -38,6 +38,19 @@ The Hatchlor integrates the following features:
 * [EditorConfig]: maintain consistent coding styles for multiple developers,
 * [src-layout]: the actual Python package is kept under a `src` folder avoiding many common errors.
 
+Please note additional integrations and following amendments:
+
+* [semantic-release]: local prepare of a commit: create changelog and commit with a version tag
+* [bump-my-version] and [generate-changelog]: alternative to [semantic-release]
+* [gitlint]: include linting of commit messages
+* [GitHub Actions]: reworked workflows - dump context, add test publishing on TestPy, switch to new PyPi mechanism
+
+The amendments support a local development and commit process while "outsourcing" testing for different OS
+and with  different Python versions to GitHub.
+The local committing includes preparation of a changelog. It is based on semantic-versioning.
+Commit-messages are linted to enforce commit messages according to conventional commits format as
+basis for a proper and automatically generated changelog.
+
 The template includes a `skeleton.py` with a simple function `fib` that calculates the Fibonacci numbers
 as demonstration. This is tested with `tests/test_skeleton.py` to demonstrate the corresponding features
 from above. As an additional tidbit, `skeleton.py` also features [Typer] to show how `fib` can be

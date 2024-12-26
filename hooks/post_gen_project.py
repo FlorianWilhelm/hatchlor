@@ -1,4 +1,10 @@
 import subprocess
+import os
+
+
+if not {{cookiecutter.gitlint_commitmsg_linter}}:
+    if os.path.exists(".gitlint"):
+        os.remove(".gitlint")
 
 try:
     subprocess.call(['git', 'init', '--initial-branch', 'main'])
